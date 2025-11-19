@@ -1,71 +1,66 @@
+import React from 'react'
+import Hero from './components/Hero'
+import Features from './components/Features'
+import Pricing from './components/Pricing'
+import CTA from './components/CTA'
+
 function App() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
-      {/* Subtle pattern overlay */}
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(59,130,246,0.05),transparent_50%)]"></div>
+    <div className="min-h-screen bg-white">
+      {/* Hero */}
+      <Hero />
 
-      <div className="relative min-h-screen flex items-center justify-center p-8">
-        <div className="max-w-2xl w-full">
-          {/* Header with Flames icon */}
-          <div className="text-center mb-12">
-            <div className="inline-flex items-center justify-center mb-6">
-              <img
-                src="/flame-icon.svg"
-                alt="Flames"
-                className="w-24 h-24 drop-shadow-[0_0_25px_rgba(59,130,246,0.5)]"
-              />
+      {/* Features */}
+      <div id="features">
+        <Features />
+      </div>
+
+      {/* Pricing */}
+      <Pricing />
+
+      {/* CTA */}
+      <CTA />
+
+      {/* Plus section: Részletes előnyök és társadalmi bizonyíték */}
+      <section className="bg-[#0f2142] py-24 text-white">
+        <div className="mx-auto max-w-6xl px-6 lg:px-8">
+          <div className="grid items-start gap-10 md:grid-cols-2">
+            <div>
+              <h3 className="text-3xl font-bold">Miért most és miért így?</h3>
+              <p className="mt-4 text-blue-100/90">
+                A piac gyorsan telítődik. Az ügynökségek, amelyek előbb lépnek, stabil MRR‑t építenek ki saját márkás platformmal. A ModiNova segítségével anélkül kínálsz prémium szoftverélményt, hogy saját fejlesztésbe fektetnél.
+              </p>
+              <ul className="mt-6 space-y-3 text-blue-100/90">
+                <li>• Nincs több váltás eszközök között – egy belépés, minden megoldva</li>
+                <li>• Kevesebb lemorzsolódás, magasabb ügyfélérték</li>
+                <li>• Gyorsabb onboarding, kevesebb support teher</li>
+              </ul>
             </div>
-
-            <h1 className="text-5xl font-bold text-white mb-4 tracking-tight">
-              Flames Blue
-            </h1>
-
-            <p className="text-xl text-blue-200 mb-6">
-              Build applications through conversation
-            </p>
-          </div>
-
-          {/* Instructions */}
-          <div className="bg-slate-800/50 backdrop-blur-sm border border-blue-500/20 rounded-2xl p-8 shadow-xl mb-6">
-            <div className="flex items-start gap-4 mb-6">
-              <div className="flex-shrink-0 w-8 h-8 bg-blue-500 text-white rounded-lg flex items-center justify-center font-bold">
-                1
-              </div>
-              <div>
-                <h3 className="font-semibold text-white mb-1">Describe your idea</h3>
-                <p className="text-blue-200/80 text-sm">Use the chat panel on the left to tell the AI what you want to build</p>
-              </div>
+            <div className="rounded-3xl border border-white/10 bg-white/5 p-6">
+              <p className="text-sm font-semibold text-blue-100/90">Mit várhatsz az első 30 napban?</p>
+              <ol className="mt-3 list-decimal space-y-2 pl-5 text-blue-100/80">
+                <li>Kickoff – igényfelmérés és arculati illesztés</li>
+                <li>Beállítás – tölcsérek, CRM, automatizmusok</li>
+                <li>Élesítés – mérőszámok és riportok bekötése</li>
+                <li>Finomhangolás – 30 napos optimalizáció</li>
+              </ol>
+              <a href="#cta" className="mt-6 inline-block rounded-xl bg-gradient-to-b from-[#F8E7B8] via-[#EACF7A] to-[#C99B29] px-5 py-3 font-semibold text-[#2b1a04] shadow-[0_8px_24px_rgba(201,155,41,0.35)] hover:brightness-105">Lássuk a részleteket</a>
             </div>
-
-            <div className="flex items-start gap-4 mb-6">
-              <div className="flex-shrink-0 w-8 h-8 bg-blue-500 text-white rounded-lg flex items-center justify-center font-bold">
-                2
-              </div>
-              <div>
-                <h3 className="font-semibold text-white mb-1">Watch it build</h3>
-                <p className="text-blue-200/80 text-sm">Your app will appear in this preview as the AI generates the code</p>
-              </div>
-            </div>
-
-            <div className="flex items-start gap-4">
-              <div className="flex-shrink-0 w-8 h-8 bg-blue-500 text-white rounded-lg flex items-center justify-center font-bold">
-                3
-              </div>
-              <div>
-                <h3 className="font-semibold text-white mb-1">Refine and iterate</h3>
-                <p className="text-blue-200/80 text-sm">Continue the conversation to add features and make changes</p>
-              </div>
-            </div>
-          </div>
-
-          {/* Footer */}
-          <div className="text-center">
-            <p className="text-sm text-blue-300/60">
-              No coding required • Just describe what you want
-            </p>
           </div>
         </div>
-      </div>
+      </section>
+
+      {/* Footer */}
+      <footer className="border-t border-slate-200 bg-white py-10">
+        <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-4 px-6 text-center sm:flex-row sm:text-left">
+          <p className="text-sm text-slate-600">© {new Date().getFullYear()} ModiNova — White‑label rendszer a te márkáddal</p>
+          <nav className="flex items-center gap-5 text-sm text-slate-600">
+            <a href="#pricing" className="hover:text-slate-900">Árazás</a>
+            <a href="#features" className="hover:text-slate-900">Funkciók</a>
+            <a href="#cta" className="hover:text-slate-900">Időpontfoglalás</a>
+          </nav>
+        </div>
+      </footer>
     </div>
   )
 }
